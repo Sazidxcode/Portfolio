@@ -386,7 +386,7 @@ TEXT SECTION
   height: 55px;
 
   background: rgba(255, 255, 255, 0.18);
-
+  backdrop-filter: blur(10px);
   border-radius: 50%;
 
   display: flex;
@@ -398,7 +398,7 @@ TEXT SECTION
 
   text-decoration: none;
 
-  backdrop-filter: blur(10px);
+  
   z-index: 50;
 }
 
@@ -669,4 +669,110 @@ IMAGE SECTION
   bottom: 5px;
 }
 
+}
+
+/* about me section started here  */
+
+
+.about-me{
+  width: 100% ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh 10vw ;
+  background-color: whitesmoke;
+}
+.about-me .sec-1,.sec-2{
+  width: 40vw;
+}
+
+.sec-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  align-items: center ;
+  padding: 50px 20px ;
+  border-radius: 20px ;
+  background: rgba(255, 255, 255, 0.589);
+  backdrop-filter: blur(50px);
+}
+.sec-1 img{
+  height: 70%;
+  width: 70%;
+  border-radius: 20px
+}
+
+.s1-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+.sec-1 h3{
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: "sora", sans-serif;
+}
+
+.sec-1 a{
+  text-decoration: none;
+  color: black;
+  font-size: 17px;
+  font-weight: 500;
+  font-family: "inter", sans-serif;
+}
+
+.sec-1 button{
+  padding: 16px 34px;
+
+  border: none;
+  border-radius: 12px;
+
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "sora", sans-serif;
+  cursor: pointer;
+
+  background: linear-gradient(to right, #245bff, #8c2eff);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.sec-2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.sec-2 .s2-1,.s2-2{
+  border-radius: 20px ;
+  background: rgba(255, 255, 255, 0.589);
+  backdrop-filter: blur(50px);
+}
+.s2-1{
+  padding: 50px 30px ;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80%;
+  gap: 15px;
+}
+.s2-1 h2{
+  font-size: 40px;
+  font-family: "sora", sans-serif;
+  font-weight: 900;
+}
+
+.s2-1 i{
+  position: relative;
+  top: 2px;
+}
+
+.s2-1 h3{
+  font-weight: 100;
+  color: green;
 }
