@@ -276,7 +276,7 @@ TEXT SECTION
   z-index: 50;
   transform: scale(0);
   opacity: 0;
-   animation: starts-refresh 1s ease-in-out 0s 1 forwards;
+  animation: starts-refresh 1s ease-in-out 0s 1 forwards;
 }
 
 @keyframes button-refresh {
@@ -378,7 +378,7 @@ TEXT SECTION
   margin-top: 20px;
   z-index: 50;
   transform: translateX(-500px) scale(0);
-   animation: starts-refresh 1s ease-in-out 0s 1 forwards;
+  animation: starts-refresh 1s ease-in-out 0s 1 forwards;
 }
 
 .social-icons a {
@@ -398,7 +398,6 @@ TEXT SECTION
 
   text-decoration: none;
 
-  
   z-index: 50;
 }
 
@@ -586,11 +585,11 @@ IMAGE SECTION
   }
 
   .image-section {
-  gap: 30px;
-  margin-bottom: 0%;
-  position: relative;
-  bottom: 40px;
-}
+    gap: 30px;
+    margin-bottom: 0%;
+    position: relative;
+    bottom: 40px;
+  }
 
   .hero-container {
     flex-direction: column-reverse;
@@ -608,10 +607,9 @@ IMAGE SECTION
   }
 
   .work-tag {
-
     font-size: 15px;
-  padding: 5px 12px;
-}
+    padding: 5px 12px;
+  }
 
   .card {
     width: 120px;
@@ -627,7 +625,7 @@ IMAGE SECTION
     font-size: 12px;
   }
 
-  .text-section{
+  .text-section {
     gap: 10px;
     position: relative;
     bottom: 40px;
@@ -651,82 +649,87 @@ IMAGE SECTION
   }
 
   .download-btn {
-  padding: 5px 15px;
+    padding: 5px 15px;
     white-space: nowrap;
-  border: none;
-  border-radius: 15px;
+    border: none;
+    border-radius: 15px;
 
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-}
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+  }
 
-.social-icons a {
-  width: 45px;
-  height: 45px;
-  font-size: 20px;
-  position: relative;
-  bottom: 5px;
-}
-
+  .social-icons a {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+    position: relative;
+    bottom: 5px;
+  }
 }
 
 /* about me section started here  */
 
-
-.about-me{
-  width: 100% ;
+.about-me {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5vh 10vw ;
+  padding: 5vh 10vw;
   background-color: whitesmoke;
 }
-.about-me .sec-1,.sec-2{
+.about-me .sec-1,
+.sec-2 {
   width: 40vw;
 }
 
-.sec-1{
+.sec-1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
-  align-items: center ;
-  padding: 50px 20px ;
-  border-radius: 20px ;
+  gap: 10px;
+  align-items: center;
+  padding: 30px 20px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.589);
   backdrop-filter: blur(50px);
 }
-.sec-1 img{
-  height: 70%;
-  width: 70%;
-  border-radius: 20px
+.sec-1 img {
+  height: 500px;
+  width: 500px;
+  border-radius: 20px;
 }
 
-.s1-text{
+.s1-text {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
 }
-.sec-1 h3{
-  font-size: 25px;
+.sec-1 h3 {
+  font-size: 28px;
   font-weight: 600;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   font-family: "sora", sans-serif;
+  color: #090a52;
 }
 
-.sec-1 a{
+.sec-1 a {
   text-decoration: none;
-  color: black;
+  color: #5e4fb9;
   font-size: 17px;
   font-weight: 500;
+  margin: 10px 0px;
   font-family: "inter", sans-serif;
 }
 
-.sec-1 button{
-  padding: 16px 34px;
+.sec-1 a i {
+  margin-right: 5px;
+}
 
+.sec-1 button {
+  padding: 16px 34px;
+  margin: 20px 0px;
   border: none;
   border-radius: 12px;
 
@@ -735,44 +738,239 @@ IMAGE SECTION
   font-weight: 600;
   font-family: "sora", sans-serif;
   cursor: pointer;
-
+  font-family: "inter", sans-serif;
   background: linear-gradient(to right, #245bff, #8c2eff);
-
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+.sec-1 button:hover {
+  letter-spacing: 3px;
+  font-weight: 100;
+  font-size: 18px;
+}
+.sec-1 button i {
+  margin-right: 10px;
 }
 
-.sec-2{
+/* section 2 started here  */
+
+.sec-2 {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
 }
-.sec-2 .s2-1,.s2-2{
-  border-radius: 20px ;
+.sec-2 .s2-1,
+.s2-2 {
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.589);
   backdrop-filter: blur(50px);
 }
-.s2-1{
-  padding: 50px 30px ;
+.s2-1 {
+  padding: 30px 30px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  width: 80%;
+  width: 90%;
   gap: 15px;
 }
-.s2-1 h2{
+.s2-1 h2 {
   font-size: 40px;
   font-family: "sora", sans-serif;
   font-weight: 900;
 }
 
-.s2-1 i{
+.s2-1 i {
   position: relative;
   top: 2px;
 }
 
-.s2-1 h3{
+.s2-1 h3 {
   font-weight: 100;
   color: green;
+}
+.s2-1 p {
+  font-family: "sora", sans-serif;
+}
+
+/* the role and app section here  */
+
+.s2-2 {
+  padding: 30px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 90%;
+  gap: 15px;
+}
+
+.s2-2 h2 {
+  font-family: "sora", sans-serif;
+}
+
+.skill-icons {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}
+.skill-icons i {
+  font-size: 40px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.skill-icons i:hover {
+  font-size: 50px;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.15))
+    drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+}
+
+.interest {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.interest-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.interest-icon:hover {
+  font-size: 20px;
+  filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.15))
+    drop-shadow(0 10px 20px rgba(0, 0, 0, 0.08));
+}
+.interest-icon i {
+  font-size: 30px;
+}
+.interest-icon p {
+  font-weight: 400;
+  font-family: "inter", sans-serif;
+}
+
+@media (max-width: 1200px) and (min-width: 768px) {
+  .about-me {
+    padding: 2vh 2vw;
+  }
+  .about-me .sec-1,
+  .sec-2 {
+    width: 45vw;
+  }
+  .sec-1 img {
+    height: 350px;
+    width: 350px;
+  }
+
+  .s2-1 {
+    padding: 20px 30px;
+    gap: 5px;
+  }
+
+  .s2-1 h2 {
+    font-size: 23px;
+  }
+
+  .s2-1 h3 {
+    font-weight: 200;
+    color: green;
+    font-size: 18px;
+  }
+
+  .s2-1 p {
+    font-family: "sora", sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .s2-2 {
+    padding: 30px 30px;
+    width: 90%;
+    gap: 10px;
+  }
+
+  .s2-2 h2 {
+    font-size: 18px;
+  }
+
+  .skill-icons i {
+    font-size: 30px;
+  }
+
+  .interest-icon i {
+    font-size: 20px;
+  }
+  .interest-icon p {
+    font-weight: 400;
+    font-family: "inter", sans-serif;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 300px) {
+  .about-me {
+    padding: 2vh 2vw;
+  }
+
+  .sec-1 {
+    display: none;
+  }
+  .sec-2 {
+    width: 100vw;
+  }
+
+  .s2-1 {
+    padding: 20px 30px;
+    gap: 5px;
+  }
+
+    .s2-1 h2 {
+    font-size: 20px;
+  }
+
+  .s2-1 h3 {
+    font-weight: 200;
+    color: green;
+    font-size: 16px;
+  }
+
+  .s2-1 p {
+    font-family: "sora", sans-serif;
+    font-size: 12px;
+    margin-top: 20px;
+  }
+
+    .s2-2 {
+    padding: 30px 30px;
+    width: 90%;
+    gap: 10px;
+  }
+
+   .s2-2 h2 {
+    font-size: 18px;
+  }
+
+  .skill-icons i {
+    font-size: 28px;
+  }
+
+   .interest-icon i {
+    font-size: 20px;
+  }
+  .interest-icon p {
+    font-weight: 400;
+    font-family: "inter", sans-serif;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+
 }
