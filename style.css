@@ -243,7 +243,7 @@ TEXT SECTION
   font-weight: 800;
   line-height: 1;
   z-index: 50;
-  animation: icons-refresh 1s ease-in-out 0s 1 forwards;
+  animation: starts-refresh 1s ease-in-out 0s 1 forwards;
 }
 
 .hero-title span {
@@ -275,7 +275,7 @@ TEXT SECTION
   z-index: 50;
   transform: scale(0);
   opacity: 0;
-  animation: button-refresh 1s ease-in-out 0s 1 forwards;
+   animation: starts-refresh 1s ease-in-out 0s 1 forwards;
 }
 
 @keyframes button-refresh {
@@ -377,18 +377,7 @@ TEXT SECTION
   margin-top: 20px;
   z-index: 50;
   transform: translateX(-500px) scale(0);
-  animation: icons-refresh 1s ease-in-out 0s 1 forwards;
-}
-
-@keyframes icons-refresh {
-  0% {
-    transform: translateX(-500px) scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0px) scale(1);
-    opacity: 1;
-  }
+   animation: starts-refresh 1s ease-in-out 0s 1 forwards;
 }
 
 .social-icons a {
