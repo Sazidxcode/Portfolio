@@ -262,6 +262,7 @@ TEXT SECTION
 .hero-description {
   width: 90%;
   font-size: 1.2rem;
+  font-family: "sora", sans-serif;
   line-height: 1.7;
   color: #111;
   z-index: 50;
@@ -645,7 +646,7 @@ IMAGE SECTION
 
   .hero-description {
     width: 90%;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.5;
   }
 
@@ -664,6 +665,8 @@ IMAGE SECTION
   width: 45px;
   height: 45px;
   font-size: 20px;
+  position: relative;
+  bottom: 5px;
 }
 
 }
