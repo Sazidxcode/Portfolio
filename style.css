@@ -787,7 +787,7 @@ IMAGE SECTION
   .text-section {
     gap: 10px;
     position: relative;
-    bottom: 40px;
+    bottom: 20px;
   }
 
   .bca-tag {
