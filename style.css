@@ -1088,23 +1088,23 @@ IMAGE SECTION
   }
 
   .s2-1 {
-    padding: 20px 30px;
+    padding: 20px 20px;
     gap: 5px;
   }
 
   .s2-1 h2 {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .s2-1 h3 {
-    font-weight: 200;
+    font-weight: 300;
     color: green;
     font-size: 16px;
   }
 
   .s2-1 p {
     font-family: "sora", sans-serif;
-    font-size: 12px;
+    font-size: 15px;
     margin-top: 20px;
   }
 
@@ -1115,15 +1115,23 @@ IMAGE SECTION
   }
 
   .s2-2 h2 {
-    font-size: 18px;
+    font-size: 20px;
+  }
+
+  .skill-icons {
+    gap: 12px;
   }
 
   .skill-icons i {
-    font-size: 28px;
+    font-size: 35px;
+  }
+
+  .interest {
+    gap: 11px;
   }
 
   .interest-icon i {
-    font-size: 20px;
+    font-size: 28px;
   }
   .interest-icon p {
     font-weight: 400;
@@ -1158,13 +1166,13 @@ IMAGE SECTION
   font-weight: 800;
   color: #0a0a2b;
 }
-/* .edu-heading i {
+.edu-heading i {
   margin-right: 20px;
   background: linear-gradient(to right, #245bff, #8c2eff);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-} */
+}
 .edu-heading span {
   background: linear-gradient(to right, #245bff, #8c2eff);
   -webkit-background-clip: text;
@@ -1596,6 +1604,13 @@ IMAGE SECTION
   background-clip: text;
   color: transparent;
 }
+.skills-heading i {
+  margin-right: 20px;
+  background: linear-gradient(to right, #245bff, #8c2eff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 
 .skills-underline {
   display: flex;
@@ -1869,6 +1884,10 @@ IMAGE SECTION
 
   .skills-heading {
     font-size: 1.7rem;
+  }
+
+  .skills-heading i {
+    display: none;
   }
 
   .skills-subtitle {
