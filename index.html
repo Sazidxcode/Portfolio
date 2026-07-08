@@ -59,14 +59,22 @@
 
     <main>
       <header class="hero-section">
+        <!-- Animated blob background -->
+        <div class="hero-bg-blobs" aria-hidden="true">
+          <div class="blob blob-1"></div>
+          <div class="blob blob-2"></div>
+          <div class="blob blob-3"></div>
+          <div class="blob blob-4"></div>
+        </div>
+
         <div class="hero-container">
           <!-- LEFT SIDE -->
           <div class="text-section">
             <div class="bca-tag">BCA Student • Web Developer</div>
 
-            <h1 class="hero-title">Hi, I'm <span>Sazid.</span></h1>
+            <h1 class="hero-title">Hi, I'm <span class="gradient-name">Sazid</span></h1>
 
-            <h2 class="hero-role">Frontend Developer</h2>
+            <h2 class="hero-role"><span id="typewriter-text"></span><span class="typewriter-cursor">|</span></h2>
 
             <p class="hero-description">
               Aspiring Software Engineer passionate about building practical
@@ -76,6 +84,7 @@
 
             <div class="hero-btns">
               <button class="download-btn">Download Resume</button>
+              <div class="btn-glow-circle" aria-hidden="true"></div>
 
               <button class="hire-btn2">Hire Me</button>
             </div>
@@ -313,5 +322,47 @@
 </section>
 
     </main>
+
+    <script>
+      // ===== TYPEWRITER EFFECT =====
+      const roles = ["Web Developer", "UI/UX Designer", "Frontend Developer", "Web Pentester"];
+      let roleIndex = 0;
+      let charIndex = 0;
+      let isDeleting = false;
+
+      const TYPING_SPEED   = 95;
+      const DELETING_SPEED = 55;
+      const PAUSE_AFTER_TYPING   = 1800;
+      const PAUSE_AFTER_DELETING = 400;
+
+      function runTypewriter() {
+        const el = document.getElementById('typewriter-text');
+        if (!el) return;
+        const current = roles[roleIndex];
+
+        if (isDeleting) {
+          el.textContent = current.substring(0, charIndex - 1);
+          charIndex--;
+        } else {
+          el.textContent = current.substring(0, charIndex + 1);
+          charIndex++;
+        }
+
+        let delay = isDeleting ? DELETING_SPEED : TYPING_SPEED;
+
+        if (!isDeleting && charIndex === current.length) {
+          delay = PAUSE_AFTER_TYPING;
+          isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          roleIndex = (roleIndex + 1) % roles.length;
+          delay = PAUSE_AFTER_DELETING;
+        }
+
+        setTimeout(runTypewriter, delay);
+      }
+
+      document.addEventListener('DOMContentLoaded', runTypewriter);
+    </script>
   </body>
 </html>

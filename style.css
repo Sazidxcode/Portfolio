@@ -165,25 +165,177 @@ nav {
 .hero-section {
   height: 100vh;
   width: 100%;
-  animation: gradient 6s ease-in-out 2s infinite;
-  background-color: #80b4fc;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    hsl(210, 100%, 90%) 0%,
+    hsl(220, 95%, 83%) 35%,
+    hsl(228, 85%, 79%) 65%,
+    hsl(235, 78%, 76%) 100%
+  );
+  background-size: 200% 200%;
+  animation: heroGradientShift 8s ease infinite;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@keyframes gradient {
+@keyframes heroGradientShift {
   0% {
-    background-color: #80b4fc;
+    background-position: 0% 50%;
   }
   50% {
-    background-color: #96c0fc;
-  }
-  70% {
-    background-color: #abceff;
+    background-position: 100% 50%;
   }
   100% {
-    background-color: #80b4fc;
+    background-position: 0% 50%;
+  }
+}
+
+/* ===== ANIMATED BLOB BACKGROUND ===== */
+
+.hero-bg-blobs {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: blobFloat 10s ease-in-out infinite;
+}
+
+.blob-1 {
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.35);
+  top: -120px;
+  left: -100px;
+  animation-duration: 9s;
+  animation-delay: 0s;
+}
+
+.blob-2 {
+  width: 380px;
+  height: 380px;
+  background: rgba(168, 85, 247, 0.1);
+  bottom: -60px;
+  right: -60px;
+  animation-duration: 12s;
+  animation-delay: -4s;
+}
+
+.blob-3 {
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.25);
+  top: 55%;
+  left: 50%;
+  animation-duration: 7s;
+  animation-delay: -6s;
+}
+
+.blob-4 {
+  width: 260px;
+  height: 260px;
+  background: rgba(139, 92, 246, 0.15);
+  bottom: 25%;
+  left: 10%;
+  animation-duration: 14s;
+  animation-delay: -2s;
+}
+
+@keyframes blobFloat {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  25% {
+    transform: translate(25px, -20px) scale(1.04);
+  }
+  50% {
+    transform: translate(-15px, 18px) scale(0.97);
+  }
+  75% {
+    transform: translate(18px, 12px) scale(1.02);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* ===== GRADIENT NAME + TYPEWRITER ===== */
+
+.gradient-name {
+  background: linear-gradient(90deg, #245bff 0%, #8c2eff 40%, #245bff 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: nameGradientSlide 3s linear infinite;
+}
+
+@keyframes nameGradientSlide {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: #4d6cff;
+  font-weight: 300;
+  animation: cursorBlink 0.9s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes cursorBlink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ===== GLOW CIRCLE NEAR DOWNLOAD BUTTON ===== */
+
+.btn-glow-circle {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(100, 80, 255, 0.55) 0%,
+    rgba(140, 46, 255, 0.28) 50%,
+    transparent 75%
+  );
+  filter: blur(18px);
+  position: absolute;
+  bottom: -24px;
+  left: 205px;
+  pointer-events: none;
+  animation: glowPulse 3s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
   }
 }
 
@@ -191,6 +343,8 @@ nav {
   width: 80%;
   min-height: 80%;
   /* border: 2px solid black; */
+  position: relative;
+  z-index: 3;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -241,23 +395,26 @@ TEXT SECTION
 
 .hero-title {
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1;
   z-index: 50;
   animation: starts-refresh 1s ease-in-out 0s 1 forwards;
 }
 
 .hero-title span {
-  color: #3048ff;
+  color: linear-gradient(to right, #245bff, #8c2eff);
+  font-family: "sora", sans-serif;
+  letter-spacing: 2px;
   z-index: 50;
 }
 
 .hero-role {
   font-size: 2.3rem;
-  color: #4d6cff;
-  font-weight: 700;
+  color: #417af6;
+  font-weight: 900;
   z-index: 50;
   animation: button-refresh 1s ease-in-out 0s 1 forwards;
+  font-family: "sora", sans-serif;
 }
 
 .hero-description {
@@ -274,6 +431,7 @@ TEXT SECTION
   display: flex;
   gap: 18px;
   margin-top: 10px;
+  position: relative;
   z-index: 50;
   transform: scale(0);
   opacity: 0;
@@ -919,7 +1077,7 @@ IMAGE SECTION
 
 @media (max-width: 768px) and (min-width: 300px) {
   .about-me {
-    padding: 2vh 2vw;
+    padding: 5vh 2vw;
   }
 
   .sec-1 {
