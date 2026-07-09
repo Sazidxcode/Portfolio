@@ -35,8 +35,8 @@
 
       <div class="nav-links">
         <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Skills</a>
+        <a href="#about-me">About</a>
+        <a href="#skills">Skills</a>
         <a href="#">Projects</a>
         <a href="#">Contact</a>
       </div>
@@ -123,7 +123,7 @@
         </div>
       </header>
 
-      <section class="about-me">
+      <section class="about-me" id="about-me" >
         <div class="sec-1">
           <img src="images/about-img.png" alt="about-photo" />
           <div class="s1-text">
@@ -198,9 +198,9 @@
         </div>
       </section>
 
-      <section class="education-section">
+      <section class="education-section"  >
   <div class="edu-header">
-    <h2 class="edu-heading"><i class="ri-graduation-cap-line"></i>Education &amp; <span>Achievements</span></h2>
+    <h2 class="edu-heading"><i class="ri-graduation-cap-line"></i>Education &amp; Achievements</h2>
     <div class="edu-underline">
       <span class="line"></span>
       <span class="dot"></span>
@@ -321,9 +321,9 @@
 
 </section>
 
-<section class="skills-section">
+<section class="skills-section" id="skills" >
   <div class="skills-header fade-up">
-    <h2 class="skills-heading"><i class="ri-landscape-ai-line"></i>Skills <span>&amp; Expertise</span></h2>
+    <h2 class="skills-heading"><i class="ri-landscape-ai-line"></i>Skills &amp; Expertise</h2>
     <div class="skills-underline">
       <span class="line"></span>
       <span class="dot"></span>
@@ -519,6 +519,118 @@
   </div>
 </section>
 
+  <section class="contact-section">
+  <div class="contact-header">
+    <span class="contact-label"><span class="dot"></span> GET IN TOUCH</span>
+    <h2 class="contact-heading">Contact <span>Me</span></h2>
+    <div class="contact-underline">
+      <span class="line"></span>
+      <span class="dot"></span>
+    </div>
+    <h3 class="contact-subheading">Let's build something great</h3>
+    <p class="contact-text">
+      I'm open to internship, freelance work, and full-time opportunities.
+      Drop me a message and I'll get back to you soon.
+    </p>
+  </div>
+
+  <div class="contact-container">
+    <!-- LEFT: CONTACT INFO -->
+    <div class="contact-info">
+      <a href="mailto:sazidhussain26@gmail.com" class="info-card">
+        <div class="info-icon email"><i class="ri-mail-line"></i></div>
+        <div class="info-text">
+          <h4>Email</h4>
+          <p>sazidhussain26@gmail.com</p>
+        </div>
+        <i class="ri-arrow-right-up-line info-arrow"></i>
+      </a>
+
+      <a href="tel:+919142055350" class="info-card">
+        <div class="info-icon phone"><i class="ri-phone-line"></i></div>
+        <div class="info-text">
+          <h4>Phone</h4>
+          <p>+91 9142055350</p>
+        </div>
+        <i class="ri-arrow-right-up-line info-arrow"></i>
+      </a>
+
+      <a href="https://www.google.com/maps/place/Barhi,+Jharkhand+825405/@24.3032518,85.4148336,15z/data=!3m1!4b1!4m6!3m5!1s0x39f36fb63fccf9cd:0x1e20e8c3f4ad461e!8m2!3d24.303789!4d85.414341!16zL20vMGYwYzFu?entry=ttu&g_ep=EgoyMDI2MDcwNy4wIKXMDSoASAFQAw%3D%3D" class="info-card">
+        <div class="info-icon location"><i class="ri-map-pin-line"></i></div>
+        <div class="info-text">
+          <h4>Location</h4>
+          <p>Barhi, Hazaribagh, Jharkhand, India</p>
+        </div>
+        <i class="ri-arrow-right-up-line info-arrow"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/sazid-hussain-a26aa236a/" class="info-card">
+        <div class="info-icon available"><i class="ri-time-line"></i></div>
+        <div class="info-text">
+          <h4>Availability</h4>
+          <p>Open for Opportunities</p>
+        </div>
+        <i class="ri-arrow-right-up-line info-arrow"></i>
+      </a>
+    </div>
+
+    <!-- RIGHT: CONTACT FORM -->
+    <div class="contact-form-box">
+      <div class="form-header">
+        <div class="form-header-icon"><i class="ri-send-plane-fill"></i></div>
+        <div>
+          <h3>Send me a message</h3>
+          <p>I'll get back to you as soon as possible.</p>
+        </div>
+      </div>
+
+      <form class="contact-form">
+        <div class="form-group">
+          <div class="input-wrap">
+            <i class="ri-user-line input-icon"></i>
+            <input type="text" id="name" name="name" placeholder=" " required />
+            <label for="name">Enter your name</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <div class="input-wrap">
+              <i class="ri-mail-line input-icon"></i>
+              <input type="email" id="email" name="email" placeholder=" " required />
+              <label for="email">Enter your email</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="input-wrap">
+              <i class="ri-file-list-line input-icon"></i>
+              <input type="text" id="subject" name="subject" placeholder=" " required />
+              <label for="subject">Enter subject</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-wrap">
+            <i class="ri-edit-2-line input-icon textarea-icon"></i>
+            <textarea id="message" name="message" placeholder=" " rows="5" required></textarea>
+            <label for="message">Type your message here...</label>
+          </div>
+        </div>
+
+        <button type="submit" class="send-btn">
+          <i class="ri-send-plane-fill"></i> Send Message
+        </button>
+
+        <p class="privacy-text">
+          <i class="ri-lock-line"></i> I respect your privacy. Your information is safe with me.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
     </main>
 
     <script>
@@ -587,6 +699,7 @@
       .querySelectorAll(".fade-up, .skill-bar-fill")
       .forEach((el) => observer.observe(el));
   })();
+
     </script>
   </body>
 </html>
