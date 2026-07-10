@@ -533,11 +533,11 @@ TEXT SECTION
 
   border: none;
   border-radius: 12px;
-
+  ont-family: "inter", sans-serif;
   color: white;
   font-size: 16px;
   font-weight: 600;
-
+  text-decoration: none;
   cursor: pointer;
 
   background: linear-gradient(to right, #245bff, #8c2eff);
