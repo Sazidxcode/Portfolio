@@ -566,7 +566,7 @@ TEXT SECTION
   color: rgb(0, 0, 0);
   font-size: 16px;
   font-weight: 600;
-
+  text-decoration: none;
   cursor: pointer;
 
   background: white;
@@ -971,7 +971,7 @@ IMAGE SECTION
   margin-right: 5px;
 }
 
-.sec-1 button {
+.sec-1 .cv-btn {
   padding: 16px 34px;
   margin: 20px 0px;
   border: none;
@@ -2349,6 +2349,41 @@ IMAGE SECTION
 .privacy-text i {
   color: #16a34a;
   font-size: 14px;
+}
+
+  /* sending part of contact form  */
+
+  .hidden-bot{
+    display:none;
+}
+
+.send-btn.loading{
+    opacity:.8;
+    cursor:not-allowed;
+}
+
+.send-btn.success{
+    background:#16a34a !important;
+    border-color:#16a34a !important;
+    color:#fff;
+}
+
+.send-btn.error{
+    background:#dc2626 !important;
+    border-color:#dc2626 !important;
+    color:#fff;
+}
+
+.form-status{
+    margin-top:15px;
+    font-size:.9rem;
+    text-align:center;
+    color:#16a34a;
+    min-height:20px;
+}
+
+.form-status.error{
+    color:#ef4444;
 }
 
 /* ===== RESPONSIVE ===== */

@@ -54,7 +54,7 @@
         <a href="#"><i class="ri-menu-3-line"></i></a>
       </div>
 
-      <button class="hire-btn">Hire Me</button>
+      <a href="#contact" class="hire-btn">Hire Me</a >
     </nav>
 
     <main>
@@ -86,7 +86,7 @@
               <a href="images/Sazid_Hussain_Resume.pdf" download="" class="hire-btn">Download Resume</a >
               <div class="btn-glow-circle" aria-hidden="true"></div>
 
-              <button class="hire-btn2">Hire Me</button>
+              <a href="#contact" class="hire-btn2">Hire Me</a>
             </div>
 
             <div class="social-icons">
@@ -133,7 +133,7 @@
               ><i class="ri-map-pin-fill"></i>Sai Nath University</a
             >
           </div>
-          <button><i class="ph ph-download-simple"></i>Download CV</button>
+          <a href="images/Sazid_Hussain_Resume.pdf" download class="cv-btn" ><i class="ph ph-download-simple"></i>Download CV</a>
         </div>
         <div class="sec-2">
           <div class="s2-1">
@@ -585,7 +585,17 @@
         </div>
       </div>
 
-      <form class="contact-form">
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+
+
+        <input type="hidden" name="access_key" value="cac03c70-dbec-49f6-bd9c-898bb7191a8e"/>
+
+        <input type="hidden" name="subject" value="New Portfolio Contact Form Submission"/>
+
+        <input type="hidden" name="from_name" value="Sazid Portfolio"/>
+
+        <input type="checkbox" name="botcheck" class="hidden-bot" tabindex="-1" autocomplete="off"/>
+
         <div class="form-group">
           <div class="input-wrap">
             <i class="ri-user-line input-icon"></i>
@@ -620,13 +630,15 @@
           </div>
         </div>
 
-        <button type="submit" class="send-btn">
-          <i class="ri-send-plane-fill"></i> Send Message
-        </button>
+        <button type="submit" class="send-btn" id="submitBtn">
+           <i class="ri-send-plane-fill"></i>
+          <span>Send Message</span>
+      </button>
 
         <p class="privacy-text">
           <i class="ri-lock-line"></i> I respect your privacy. Your information is safe with me.
         </p>
+        <p class="form-status" id="formStatus"></p>
       </form>
     </div>
   </div>
@@ -754,7 +766,7 @@
 
       document.addEventListener('DOMContentLoaded', runTypewriter);
       
-      // code for the skills section  
+       
 
       (function () {
     const observer = new IntersectionObserver(
@@ -779,6 +791,171 @@
       .querySelectorAll(".fade-up, .skill-bar-fill")
       .forEach((el) => observer.observe(el));
   })();
+
+    // contact form function part 
+
+    const form = document.getElementById("contactForm");
+const submitBtn = document.getElementById("submitBtn");
+const statusText = document.getElementById("formStatus");
+
+const originalButton = submitBtn.innerHTML;
+
+// ===== Rate Limit =====
+const MESSAGE_LIMIT = 3;
+const LIMIT_KEY = "portfolio_contact_count";
+const LIMIT_TIME_KEY = "portfolio_contact_time";
+const ONE_DAY = 24 * 60 * 60 * 1000;
+
+// Reset after 24 hours
+const savedTime = localStorage.getItem(LIMIT_TIME_KEY);
+
+if (!savedTime || (Date.now() - Number(savedTime)) > ONE_DAY) {
+    localStorage.setItem(LIMIT_TIME_KEY, Date.now());
+    localStorage.setItem(LIMIT_KEY, 0);
+}
+
+form.addEventListener("submit", async (e) => {
+
+    e.preventDefault();
+
+    statusText.textContent = "";
+    statusText.classList.remove("error");
+
+    // ===== Message Validation =====
+    const message = document.getElementById("message").value.trim();
+
+    if (message.length < 100) {
+
+        submitBtn.classList.add("error");
+
+        submitBtn.innerHTML = `
+            <i class="ri-error-warning-line"></i>
+            <span>Too Short</span>
+        `;
+
+        statusText.textContent =
+            "Please provide a brief description (minimum 100 characters) so I can better understand your inquiry.";
+
+        statusText.classList.add("error");
+
+        setTimeout(() => {
+
+            submitBtn.classList.remove("error");
+            submitBtn.innerHTML = originalButton;
+
+        }, 3000);
+
+        return;
+    }
+
+    // ===== Rate Limit =====
+    const currentCount = Number(localStorage.getItem(LIMIT_KEY) || 0);
+
+    if (currentCount >= MESSAGE_LIMIT) {
+
+        submitBtn.classList.add("error");
+
+        submitBtn.innerHTML = `
+            <i class="ri-error-warning-line"></i>
+            <span>Limit Reached</span>
+        `;
+
+        statusText.textContent =
+            "You can send only 3 messages every 24 hours.";
+
+        statusText.classList.add("error");
+
+        setTimeout(() => {
+
+            submitBtn.classList.remove("error");
+            submitBtn.innerHTML = originalButton;
+
+        }, 3000);
+
+        return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.classList.add("loading");
+
+    submitBtn.innerHTML = `
+        <i class="ri-loader-4-line ri-spin"></i>
+        <span>Sending...</span>
+    `;
+
+    const formData = new FormData(form);
+
+    try {
+
+        const response = await fetch(form.action, {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+
+            localStorage.setItem(LIMIT_KEY, currentCount + 1);
+
+            submitBtn.classList.remove("loading");
+            submitBtn.classList.add("success");
+
+            submitBtn.innerHTML = `
+                <i class="ri-check-line"></i>
+                <span>Message Sent</span>
+            `;
+
+            statusText.textContent =
+                `Thank you! Your message has been sent successfully. (${currentCount + 1}/${MESSAGE_LIMIT})`;
+
+            form.reset();
+
+            setTimeout(() => {
+
+                submitBtn.disabled = false;
+
+                submitBtn.classList.remove("success");
+
+                submitBtn.innerHTML = originalButton;
+
+            }, 3000);
+
+        } else {
+
+            throw new Error();
+
+        }
+
+    } catch {
+
+        submitBtn.disabled = false;
+
+        submitBtn.classList.remove("loading");
+
+        submitBtn.classList.add("error");
+
+        submitBtn.innerHTML = `
+            <i class="ri-close-line"></i>
+            <span>Failed</span>
+        `;
+
+        statusText.textContent =
+            "Something went wrong. Please try again.";
+
+        statusText.classList.add("error");
+
+        setTimeout(() => {
+
+            submitBtn.classList.remove("error");
+
+            submitBtn.innerHTML = originalButton;
+
+        }, 3000);
+
+    }
+
+});
 
     </script>
   </body>
