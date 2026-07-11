@@ -41,12 +41,12 @@
 
     <!-- ================= SEO ================= -->
 
-<title>Sazid Hussain | Front-End Developer & Cybersecurity Enthusiast</title>
+<title>Sazid Hussain | Software Engineer</title>
 
 
 <meta name="description" content="Portfolio of Sazid Hussain, BCA student, Front-End Developer and Cybersecurity enthusiast. Explore responsive web projects, certifications, technical skills and contact information.">
 
-<meta name="keywords" content="Sazid Hussain, Front-End Developer, Web Developer, Portfolio, HTML, CSS, JavaScript, SQL, Git, GitHub, Cybersecurity, BCA Student">
+<meta name="keywords" content="sazid hussain , sazid website , sazid hussain website ,sazid , website ,Sazid Hussain, Front-End Developer, Web Developer, Portfolio, Software Engineer, Developer , Cybersecurity, BCA Student">
 
 <meta name="author" content="Sazid Hussain">
 
@@ -182,6 +182,79 @@
       <a href="#contact" class="hire-btn">Hire Me</a >
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+<div class="menu-overlay"></div>
+
+<!-- Mobile Menu -->
+<aside class="mobile-menu">
+
+    <button class="close-menu">
+        <i class="ri-close-line"></i>
+    </button>
+
+    <div class="mobile-links">
+
+        <a href="#">
+            <i class="ri-home-5-line"></i>
+            <span>Home</span>
+            <i class="ri-arrow-right-s-line"></i>
+        </a>
+
+        <a href="#about-me">
+            <i class="ri-user-3-line"></i>
+            <span>About</span>
+            <i class="ri-arrow-right-s-line"></i>
+        </a>
+
+        <a href="#skills-section">
+            <i class="ri-code-s-slash-line"></i>
+            <span>Skills</span>
+            <i class="ri-arrow-right-s-line"></i>
+        </a>
+
+        <a href="#education-section" >
+            <i class="ri-folder-line"></i>
+            <span>Education</span>
+            <i class="ri-arrow-right-s-line"></i>
+        </a>
+
+        <a href="#contact">
+            <i class="ri-mail-line"></i>
+            <span>Contact</span>
+            <i class="ri-arrow-right-s-line"></i>
+        </a>
+
+    </div>
+
+    <div class="mobile-social">
+
+        <p>Let's Connect</p>
+
+        <div>
+
+            <a href="https://www.linkedin.com/in/sazid-hussain-a26aa236a/" target="_blank">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+
+            <a href="https://github.com/Sazidxcode" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="mailto:sazidxbca@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+
+            <a href="https://leetcode.com/u/sazidxbca/">
+                <i class="devicon-leetcode-plain"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</aside>
+
+
     <main>
       <header class="hero-section " id="hero-section" >
         <!-- Animated blob background -->
@@ -220,7 +293,7 @@
               <a href="https://github.com/Sazidxcode" target="_blank" ><i class="fa-brands fa-github"></i></a>
 
               <a href="mailto:sazidxbca@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-              <a href="#" > <i class="devicon-leetcode-plain"></i> </a>
+              <a href="https://leetcode.com/u/sazidxbca/" > <i class="devicon-leetcode-plain"></i> </a>
             </div>
           </div>
 
@@ -1080,6 +1153,45 @@ form.addEventListener("submit", async (e) => {
 
     }
 
+});
+
+   // mobile menu section 
+
+   const menuBtn = document.querySelector(".ri-menu-3-line").parentElement;
+const menu = document.querySelector(".mobile-menu");
+const overlay = document.querySelector(".menu-overlay");
+const closeBtn = document.querySelector(".close-menu");
+
+function openMenu(){
+
+    menu.classList.add("active");
+    overlay.classList.add("active");
+
+    document.body.classList.add("menu-open");
+}
+
+function closeMenu(){
+
+    menu.classList.remove("active");
+    overlay.classList.remove("active");
+
+    document.body.classList.remove("menu-open");
+}
+
+menuBtn.addEventListener("click",e=>{
+
+    e.preventDefault();
+
+    openMenu();
+});
+
+closeBtn.addEventListener("click",closeMenu);
+
+overlay.addEventListener("click",closeMenu);
+
+document.querySelectorAll(".mobile-links a").forEach(link=>{
+
+    link.addEventListener("click",closeMenu);
 });
 
     </script>
